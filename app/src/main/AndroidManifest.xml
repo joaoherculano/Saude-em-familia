@@ -19,7 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Calendario"></activity>
+        <activity android:name=".Calendario" />
+        <activity android:name=".injecaoclass" />
+        <activity
+            android:name=".injecaoActivity"
+            android:label="@string/title_activity_injecao"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".injecao" />
+        <activity android:name=".Medico" />
+        <activity android:name=".vacinasanimal" />
+        <activity android:name=".localizacao"></activity>
     </application>
 
 </manifest>

@@ -72,16 +72,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.itemId
 
         if (id == R.id.nav_calendario) {
-            var i = Intent(this@MainActivity, Calendario::class.java)
-            startActivity(i)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://portalsaude.saude.gov.br/index.php/cidadao/entenda-o-sus")))
+//            var i = Intent(this@MainActivity, Calendario::class.java)
+//            startActivity(i)
 //           <--- esse metodo do var para baixo vai para outra tela
 
         } else if (id == R.id.nav_injecao) {
+            var i = Intent(this@MainActivity, injecao::class.java)
+            startActivity(i)
 
         } else if (id == R.id.nav_medico) {
-
+            var i = Intent(this@MainActivity, Medico::class.java)
+            startActivity(i)
         } else if (id == R.id.nav_vacina) {
-
+            var i = Intent(this@MainActivity, vacinasanimal::class.java)
+            startActivity(i)
         } else if (id == R.id.nav_compartilhar) {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")))
 
@@ -89,6 +94,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //        } else if (id == R.id.nav_send) {
 
         } else if (id == R.id.nav_psf) {
+            var i = Intent(this@MainActivity, localizacao::class.java)
+            startActivity(i)
 
         }
 
