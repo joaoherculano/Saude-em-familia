@@ -5,15 +5,20 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
-import android.view.View
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import com.example.central.projeto.adapter.MyAdapter
+import com.example.central.projeto.models.evento
+import kotlinx.android.synthetic.main.activity_recycle.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -22,12 +27,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        rvEventos.setHasFixedSize(true)
+        rvEventos.layoutManager = LinearLayoutManager(this)
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        val eventos:ArrayList<evento> = ArrayList<evento>()
+        for(i in 0..100){
+            eventos.add(evento("Event ${i}",
+                    "Event ${i} about XYZ${i}",
+                    "Location: ${i}", "Hour: ${i}"))
         }
+
+        val mAdapter: RecyclerView.Adapter<*> = MyAdapter(this@MainActivity, eventos){
+            Toast.makeText(this@MainActivity, it.toString(), Toast.LENGTH_SHORT).show()
+        }
+        rvEventos.adapter = mAdapter
+
+
+
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(

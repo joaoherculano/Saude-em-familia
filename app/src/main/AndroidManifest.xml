@@ -28,7 +28,16 @@
         <activity android:name=".injecao" />
         <activity android:name=".Medico" />
         <activity android:name=".vacinasanimal" />
-        <activity android:name=".localizacao"></activity>
+        <activity android:name=".localizacao" />
+        <activity
+            android:name=".adapter.adapter"
+            android:label="@string/title_activity_adapter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".models.models" />
+        <activity android:name=".adapter.MyAdapter" />
+        <activity android:name=".models.Evento" />
+        <activity android:name=".models.recycle" />
+        <activity android:name=".models.evento"></activity>
     </application>
 
 </manifest>
