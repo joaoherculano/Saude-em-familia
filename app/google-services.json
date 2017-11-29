@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "525512457515",
+    "firebase_url": "https://saudeconsultoria-fa05d.firebaseio.com",
+    "project_id": "saudeconsultoria-fa05d",
+    "storage_bucket": "saudeconsultoria-fa05d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525512457515:android:0ae4b998bfb9f54c",
+        "android_client_info": {
+          "package_name": "com.example.central.projeto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525512457515-vj7k9u57bc5sf1d0vd477kksemsc61vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.central.projeto",
+            "certificate_hash": "cf97c949502cad8f36e021a86f5ea9661268f255"
+          }
+        },
+        {
+          "client_id": "525512457515-74prddn280nksd1cainmo8o3ta9kff41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj3XhNry4HugIbOEmK7SGZfV9N9zm6Z_w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525512457515-74prddn280nksd1cainmo8o3ta9kff41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
