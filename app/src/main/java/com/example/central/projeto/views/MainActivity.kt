@@ -1,4 +1,4 @@
-package com.example.central.projeto
+package com.example.central.projeto.views
 
 import android.app.Notification
 import android.app.NotificationManager
@@ -10,8 +10,6 @@ import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.content.LocalBroadcastManager
 import android.support.v4.view.GravityCompat
@@ -25,46 +23,42 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
-import com.example.central.projeto.Activity.LoginActivityy
-import com.example.central.projeto.adapter.MyAdapter
-import com.example.central.projeto.models.FirebaseServiços.Config
-import com.example.central.projeto.models.evento
+import com.example.central.projeto.R
+import com.example.central.projeto.adapter.AdapterPsfs
+import com.example.central.projeto.models.FirebaseServices.Config
+import com.example.central.projeto.adapter.SaveData
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_recycle.*
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
 
+    var mRegistrationBroadcastReceiver: BroadcastReceiver? = null
+    lateinit var helper: SaveData
+    lateinit var adapter: AdapterPsfs
+    lateinit var rv: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        rvEventos.setHasFixedSize(true)
-        rvEventos.layoutManager = LinearLayoutManager(this)
 
-        val eventos:ArrayList<evento> = ArrayList<evento>()
-        for(i in 0..100) {
-            eventos.add(evento("Vacinas ${i}", "Local: ${i}"))
-
-        }
-
-        val mAdapter: RecyclerView.Adapter<*> = MyAdapter(this@MainActivity, eventos){
-            Toast.makeText(this@MainActivity, it.toString(), Toast.LENGTH_SHORT).show()
-        }
-        rvEventos.adapter = mAdapter
+        initilizeFirebase()
+        initializeRecyclerView()
+        refreshDataFirebase()
 
         mRegistrationBroadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent) {
                 if (intent.action == Config.STR_PUSH) {
                     val message = intent.getStringExtra("message")
-                    showNotification("InfraAPP", message)
+                    showNotification("Saude em familia", message)
                 }
             }
 
         }
+
+        val db = FirebaseDatabase.getInstance().reference
+        helper = SaveData(db)
 
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
@@ -79,6 +73,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onPause() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver)
         super.onPause()
+    }
+
+    private fun initilizeFirebase() {
+        // Initiliaze Firebase
+        val db = FirebaseDatabase.getInstance().reference
+        helper = SaveData(db)
+    }
+
+    fun initializeRecyclerView() {
+
+        rv = findViewById(R.id.rvEventos) as RecyclerView
+        rv.layoutManager = LinearLayoutManager(this)
+        refreshDataFirebase()
+
+    }
+
+    fun refreshDataFirebase() {
+        adapter = AdapterPsfs(this, helper.retrieve())
+        rv.adapter = adapter
     }
 
     override fun onResume() {

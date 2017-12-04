@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.central.projeto.LoginActitvity">
+    android:orientation="vertical"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginBottom="0dp"
 
-</android.support.constraint.ConstraintLayout>
+    android:gravity="center"
+    tools:context="com.example.central.projeto.views.LoginActivityy">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edtEmail"
+        android:hint="Digite Seu E-mail"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edtSenha"
+        android:hint="Digite Sua Senha"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnLogar"
+        android:layout_width="match_parent"
+        android:text="Entrar"
+        android:layout_height="wrap_content"
+        android:onClick="logar" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manter conectado"
+        android:id="@+id/cbManterConectado"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="Não tem Cadastro? clique aqui!"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+

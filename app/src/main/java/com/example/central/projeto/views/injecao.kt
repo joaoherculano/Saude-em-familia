@@ -1,7 +1,8 @@
-package com.example.central.projeto
+package com.example.central.projeto.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.central.projeto.R
 
 class injecao : AppCompatActivity() {
 

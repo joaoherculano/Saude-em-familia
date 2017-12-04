@@ -13,20 +13,30 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_margin="8dp"
-        android:text="ad"
+        android:text=""
         />
     <TextView
-        android:id="@+id/tvDesc"
-        android:layout_width="match_parent"
+        android:id="@+id/Tvoutros"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:gravity="center_vertical"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="18sp"
-        android:layout_weight="1"
+        android:textSize="12sp"
         android:text="ad"
         />
+    <!--<TextView-->
+        <!--android:id="@+id/tvDesc"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:textSize="18sp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="ad"-->
+        <!--/>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,15 +51,26 @@
             android:textSize="12sp"
             android:text="ad"
             />
-        <TextView
-            android:id="@+id/tvHorario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="8dp"
-            android:textSize="12sp"
-            android:text="ad"
-            />
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvHorario"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:textSize="12sp"-->
+            <!--android:text="ad"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tvtest"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:textSize="12sp"-->
+            <!--android:text="ad"-->
+            <!--/>-->
     </LinearLayout>
 </LinearLayout>

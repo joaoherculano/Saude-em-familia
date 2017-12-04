@@ -22,9 +22,11 @@
             android:id="@+id/nav_psf"
             android:icon="@drawable/ic_psfmaisproximo"
             android:title="PSF mais proximo" />
+
     </group>
 
     <item android:title="compartilhamentos">
+
         <menu>
             <item
                 android:id="@+id/nav_compartilhar"

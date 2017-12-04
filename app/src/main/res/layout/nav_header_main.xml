@@ -32,4 +32,13 @@
         android:layout_height="wrap_content"
         android:text="joaoherculanoo@gmail.com" />
 
+    <Button
+        android:id="@+id/sair"
+        android:text="SAIR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#664"
+        android:onClick="sair"
+        />
+
 </LinearLayout>
