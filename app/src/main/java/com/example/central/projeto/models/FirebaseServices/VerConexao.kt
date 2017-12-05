@@ -1,4 +1,4 @@
-package br.com.appinfra.appinfra.models.models.beans.FirebaseServices
+package com.example.central.projeto.models.myFirebaseIdService
 
 import android.util.Log
 import com.google.firebase.iid.FirebaseInstanceId

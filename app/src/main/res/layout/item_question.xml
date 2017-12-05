@@ -1,0 +1,85 @@
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/card_view"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="10dp"
+card_view:cardCornerRadius="4dp"
+    tools:context=".views.MainActivity"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_imagem"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:layout_alignEnd="@+id/ivStatus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/ivStatus" />
+
+        <TextView
+            android:id="@+id/tv_medico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_horario"
+            android:layout_alignStart="@+id/tv_horario"
+            android:layout_below="@+id/tv_psf"
+            android:text="TESTE"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_horario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_psf"
+            android:layout_alignStart="@+id/tv_psf"
+            android:layout_below="@+id/tv_medico"
+            android:text="TESTE"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_horario"
+            android:layout_alignBottom="@+id/tv_horario"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="TESTE"
+            android:textStyle="bold"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:id="@+id/ivStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_psf"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            />
+        <TextView
+            android:id="@+id/tv_psf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/iv_imagem"
+            android:layout_marginTop="16dp"
+            android:text="TESTE"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
